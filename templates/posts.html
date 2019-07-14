@@ -1,3 +1,11 @@
+<header>
+<div>
+    <a href = "{% url 'make_post' %}">Make Post</a>
+</div>
+</header>
+
+
+
 <div>
     {% for post in object_list  %}
         <p>{{post.title}}</p>
