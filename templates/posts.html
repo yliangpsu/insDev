@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <header>
 <div>
     <a href = "{% url 'make_post' %}">Make Post</a>
@@ -14,3 +18,5 @@
         </a>
     {% endfor %}
 </div>
+
+{% endblock  %}
