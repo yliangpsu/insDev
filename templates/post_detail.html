@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="image__wrapper">
-            <img class="card__main-image" src="http://{{ request.META.HTTP_HOST }}/{{object.image.url}}" max-width='1000', max-height='1000'>
+            <img class="card__main-image" src="http://{{ request.META.HTTP_HOST }}/{{object.image.url}}"  max_height = '1000'>
         </div>
         <div class="comments-portion">
             <div class="likes-timestamp-row">
@@ -47,10 +47,12 @@
                     <span class="post-pk">{{ object.pk }}</span>
                 </div>
             </section>
-            <div class = "text-right"> 
-                    <a href = "{% url 'update_post' post.id%}" class="text-muted">Edit</a>
-                    <a href = "{% url 'delete_post' post.id%}" class="text-muted">Delete</a>    
-            </div>
+            {%if request.user.pk == object.author.pk%}
+                <div class = "text-right"> 
+                        <a href = "{% url 'update_post' post.id%}" class="text-muted">Edit</a>
+                        <a href = "{% url 'delete_post' post.id%}" class="text-muted">Delete</a>    
+                </div>
+            {%endif%}
 
         </div>
          
