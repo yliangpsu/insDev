@@ -1,1 +1,1 @@
-web: gunicorn InsDemo.wsgi --log-file -
+web: gunicorn insDemo.wsgi --log-file -
